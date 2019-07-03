@@ -4,6 +4,15 @@ public class LOL {
  private String test;
  private int xd;
  private String tuma;
+ private int numero;
+
+public int getNumero() {
+	return numero;
+}
+
+public void setNumero(int numero) {
+	this.numero = numero;
+}
 
 public int getXd() {
 	return xd;

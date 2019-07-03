@@ -3,9 +3,18 @@ package Logica;
 public class LOL {
  private String test;
  private int xd;
+ private String tuma;
 
 public int getXd() {
 	return xd;
+}
+
+public String getTuma() {
+	return tuma;
+}
+
+public void setTuma(String tuma) {
+	this.tuma = tuma;
 }
 
 public void setXd(int xd) {

@@ -31,4 +31,10 @@ public class Rectangulo extends Prisma {
 		return (lado(vertice1, vertice2) * ladoAltura(vertice1, vertice3));
 	}
 
+	@Override
+	float perimetro() {
+		
+		return ( lado(vertice1, vertice2) + ladoAltura(vertice1, vertice3) ) * 2;
+	}
+
 }

@@ -1,8 +1,8 @@
 package Logica;
 
-public class Prisma {
+public abstract class Prisma {
 	
-	protected int altura;
+	protected float altura;
 	protected Vertice vertice1;
 	protected Vertice vertice2;
 	
@@ -13,7 +13,7 @@ public class Prisma {
 		this.vertice2 = vertice2;
 	}
 
-	public int getAltura() {
+	public float getAltura() {
 		return altura;
 	}
 
@@ -38,6 +38,19 @@ public class Prisma {
 	}
 	
 	abstract float area();
+	abstract float perimetro();
+	
+	public float volumen() {
+		return area() * altura;
+	}
+	
+	public float areaLateral() {
+		return perimetro() * altura;
+	}
+	
+	public float areaTotal() {
+		return areaLateral() + (2*area());
+	}
 
 	
 

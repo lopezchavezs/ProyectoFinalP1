@@ -16,4 +16,9 @@ public class Cuadrado extends Prisma {
 		return (float) Math.pow(lado(vertice1, vertice2), 2);
 	}
 	
+	@Override
+	float perimetro() {
+		return (float) (lado(vertice1, vertice2) * 4);
+	}
+	
 }

@@ -36,9 +36,13 @@ public abstract class Prisma {
 	public void setVertice2(Vertice vertice2) {
 		this.vertice2 = vertice2;
 	}
+<<<<<<< HEAD
 	
 	abstract float area();
 	abstract float perimetro();
+=======
+	//Samule vamos a buscar cueros
+>>>>>>> branch 'master' of https://github.com/lopezchavezs/ProyectoFinalP1.git
 	
 	public float volumen() {
 		return area() * altura;
@@ -52,5 +56,5 @@ public abstract class Prisma {
 		return areaLateral() + (2*area());
 	}
 
-//hjjhhh
+//hjjhhh// para ver si se hcieron cambios
 }

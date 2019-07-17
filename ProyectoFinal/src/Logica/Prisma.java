@@ -4,7 +4,7 @@ public abstract class Prisma {
 	
 	protected float altura;
 	protected Vertice vertice1;
-	protected Vertice vertice22;
+	protected Vertice vertice2;
 	
 	public Prisma(int altura, Vertice vertice1, Vertice vertice2) {
 		super();
@@ -52,6 +52,5 @@ public abstract class Prisma {
 		return areaLateral() + (2*area());
 	}
 
-	//asasassasihhjdsdsdsdh
 
 }

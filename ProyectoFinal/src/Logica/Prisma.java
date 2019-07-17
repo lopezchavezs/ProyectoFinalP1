@@ -35,7 +35,7 @@ public class Prisma {
 	public void setVertice2(int vertice2) {
 		this.vertice2 = vertice2;
 	}
-	
+	//Samule vamos a buscar cueros
 	
 
 }

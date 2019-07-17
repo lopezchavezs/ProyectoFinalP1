@@ -4,7 +4,7 @@ public abstract class Prisma {
 	
 	protected float altura;
 	protected Vertice vertice1;
-	protected Vertice vertice2;
+	protected Vertice vertice22;
 	
 	public Prisma(int altura, Vertice vertice1, Vertice vertice2) {
 		super();

@@ -2,15 +2,17 @@ package Logica;
 
 public abstract class Prisma {
 	
-	protected float altura;
+	protected int altura;
+	protected String nombre;
 	protected Vertice vertice1;
 	protected Vertice vertice2;
 	
-	public Prisma(int altura, Vertice vertice1, Vertice vertice2) {
+	public Prisma(int altura, Vertice vertice1, Vertice vertice2, String nombre) {
 		super();
 		this.altura = altura;
 		this.vertice1 = vertice1;
 		this.vertice2 = vertice2;
+		this.nombre = nombre;
 	}
 
 	public float getAltura() {
@@ -36,13 +38,19 @@ public abstract class Prisma {
 	public void setVertice2(Vertice vertice2) {
 		this.vertice2 = vertice2;
 	}
-<<<<<<< HEAD
+
 	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	abstract float area();
 	abstract float perimetro();
-=======
-	//Samule vamos a buscar cueros
->>>>>>> branch 'master' of https://github.com/lopezchavezs/ProyectoFinalP1.git
+
 	
 	public float volumen() {
 		return area() * altura;
@@ -56,5 +64,5 @@ public abstract class Prisma {
 		return areaLateral() + (2*area());
 	}
 
-//hjjhhh// para ver si se hcieron cambios
+
 }

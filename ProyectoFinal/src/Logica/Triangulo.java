@@ -3,8 +3,8 @@ package Logica;
 public class Triangulo extends Prisma {
 	private Vertice alt_base;
 
-	public Triangulo(int altura, Vertice vertice1, Vertice vertice2, Vertice alt_base) {
-		super(altura, vertice1, vertice2);
+	public Triangulo(int altura, Vertice vertice1, Vertice vertice2, Vertice alt_base, String nombre) {
+		super(altura, vertice1, vertice2, nombre);
 		this.alt_base = alt_base;
 	}
 

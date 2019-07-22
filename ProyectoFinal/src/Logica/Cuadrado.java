@@ -20,5 +20,6 @@ public class Cuadrado extends Prisma {
 	float perimetro() {
 		return (float) (lado(vertice1, vertice2) * 4);
 	}
-	
+
+	//sdsdsd
 }

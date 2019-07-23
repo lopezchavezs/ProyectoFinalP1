@@ -15,7 +15,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaInicial extends JFrame {
+public class Main extends JFrame {
 	
 	private Dimension dim;
 	private JPanel contentPane;
@@ -27,7 +27,7 @@ public class VentanaInicial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaInicial frame = new VentanaInicial();
+					Main frame = new Main();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class VentanaInicial extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaInicial() {
+	public Main() {
 		setTitle("Centro de estudio matematico");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

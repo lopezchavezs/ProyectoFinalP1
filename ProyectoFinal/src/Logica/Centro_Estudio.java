@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Centro_Estudio {
 	private ArrayList<Prisma> misPrismas;
+	private ArrayList<Estudiante> misEstudiantes;
 
 	public Centro_Estudio() {
 		super();
@@ -14,8 +15,16 @@ public class Centro_Estudio {
 		return misPrismas;
 	}
 
-	public void setMisPrismas(ArrayList<Prisma> misPrismas) {
-		this.misPrismas = misPrismas;
+	public void setMisPrismas(ArrayList<Estudiante> misEstudiantes) {
+		this.misEstudiantes = misEstudiantes;
+	}
+	
+	public ArrayList<Estudiante> getMisEstudiantes() {
+		return misEstudiantes;
+	}
+
+	public void setMisEstudiantes(ArrayList<Estudiante> misEstudiantes) {
+		this.misEstudiantes = misEstudiantes;
 	}
 	
 	

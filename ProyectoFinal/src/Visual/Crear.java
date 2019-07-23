@@ -3,11 +3,15 @@ package Visual;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.sun.prism.Image;
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -15,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.image.*;
 
 public class Crear extends JDialog {
 
@@ -147,6 +152,12 @@ public class Crear extends JDialog {
 		JButton btnVistaPrevia = new JButton("Vista previa");
 		btnVistaPrevia.setBounds(304, 315, 116, 25);
 		contentPanel.add(btnVistaPrevia);
+		
+		JLabel Image11 = new JLabel("");
+		java.awt.Image img = new ImageIcon(this.getClass().getResource("/32390.png")).getImage();
+		Image11.setIcon(new ImageIcon(img));
+		Image11.setBounds(42, 198, 350, 180);
+		contentPanel.add(Image11);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBorder(new TitledBorder(null, " ", TitledBorder.LEADING, TitledBorder.TOP, null, null));

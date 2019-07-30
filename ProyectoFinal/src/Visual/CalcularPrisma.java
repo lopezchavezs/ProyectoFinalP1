@@ -253,7 +253,7 @@ public class CalcularPrisma extends JDialog {
 		Panel_Trapecio = new JPanel();
 		Panel_Trapecio.setBackground(Color.WHITE);
 		Panel_Trapecio.setForeground(Color.BLACK);
-		Panel_Trapecio.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		Panel_Trapecio.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca datos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		Panel_Trapecio.setBounds(10, 400, 584, 140);
 		contentPanel.add(Panel_Trapecio);
 		Panel_Trapecio.setLayout(null);
@@ -347,7 +347,7 @@ public class CalcularPrisma extends JDialog {
 		contentPanel.add(Panel_Rec);
 		Panel_Rec.setLayout(null);
 		Panel_Rec.setForeground(Color.BLACK);
-		Panel_Rec.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		Panel_Rec.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca datos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		Panel_Rec.setBackground(Color.WHITE);
 		
 		lblVertice_1_1 = new JLabel("Vertice 1:");
@@ -423,7 +423,7 @@ public class CalcularPrisma extends JDialog {
 		Panel_Triangulo = new JPanel();
 		Panel_Triangulo.setBackground(Color.WHITE);
 		Panel_Triangulo.setForeground(Color.BLACK);
-		Panel_Triangulo.setBorder(new TitledBorder(null, "Introduzca Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		Panel_Triangulo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca datos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		Panel_Triangulo.setBounds(10, 400, 584, 140);
 		contentPanel.add(Panel_Triangulo);
 		Panel_Triangulo.setLayout(null);
@@ -511,7 +511,7 @@ public class CalcularPrisma extends JDialog {
 		Panel_Rombo = new JPanel();
 		Panel_Rombo.setBackground(Color.WHITE);
 		Panel_Rombo.setForeground(Color.BLACK);
-		Panel_Rombo.setBorder(new TitledBorder(null, "Introduzca Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		Panel_Rombo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca datos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		Panel_Rombo.setBounds(10, 400, 584, 140);
 		contentPanel.add(Panel_Rombo);
 		Panel_Rombo.setLayout(null);
@@ -599,7 +599,7 @@ public class CalcularPrisma extends JDialog {
 		Panel_Cuadrado = new JPanel();
 		Panel_Cuadrado.setBackground(Color.WHITE);
 		Panel_Cuadrado.setForeground(Color.BLACK);
-		Panel_Cuadrado.setBorder(new TitledBorder(null, "Introduzca Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		Panel_Cuadrado.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Introduzca datos", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 
 		Panel_Cuadrado.setBounds(10, 400, 584, 140);
 		contentPanel.add(Panel_Cuadrado);

@@ -75,8 +75,9 @@ public class Main extends JFrame {
 		mnPrisma.add(mntmListar);
 		
 		JMenu mnAdministrador = new JMenu("Administrador");
-		mnAdministrador.setEnabled(true);
+		mnAdministrador.setEnabled(false);
 		menuBar.add(mnAdministrador);
+		
 		
 		JMenuItem mntmPrismasCreados = new JMenuItem("Prismas creados");
 		mntmPrismasCreados.addActionListener(new ActionListener() {

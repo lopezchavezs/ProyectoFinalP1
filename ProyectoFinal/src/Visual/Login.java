@@ -91,6 +91,8 @@ public class Login extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ha ingresado satisfactoriamente", "INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
 				    Main m = new Main();
 				    m.setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "Contraseña o nombre de usuario incorrecto, por favor intente de nuevo", "Atencion",JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});

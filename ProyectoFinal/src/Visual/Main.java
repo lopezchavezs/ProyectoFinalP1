@@ -72,7 +72,7 @@ public class Main extends JFrame {
 		JMenuItem mntmCrear = new JMenuItem("Crear");
 		mntmCrear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Crear prisma = new Crear();
+				CalcularPrisma prisma = new CalcularPrisma();
 				prisma.setModal(true);
 				prisma.setVisible(true);
 			}

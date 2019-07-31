@@ -10,6 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+
+import Logica.Cuadrado;
+import Logica.Prisma;
+
 import javax.swing.JLabel;
 
 import java.awt.image.*;
@@ -661,7 +665,14 @@ public class CalcularPrisma extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("Calcular");
+				JButton okButton = new JButton("Crear");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+					/*	if(rdbtnCuadrado.setSelected(true)) {
+							Cuadrado cuadrado = new Cuadrado(spn_Altura.getComponentCount(), spn_1_x.getComponentCount()+spn_1_y.getComponentCount(), spn_2_x.getComponentCount()+spn_2_y.getComponentCount(), textField.getText());
+						}*/
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);

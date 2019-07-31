@@ -15,7 +15,19 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
+
+import Logica.Centro_Estudio;
+import Logica.Estudiante;
+
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.security.Principal;
 import java.awt.event.ActionEvent;
 
@@ -31,6 +43,41 @@ public class Login extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				FileInputStream centroin;
+				FileOutputStream centroout;
+				ObjectInputStream centroread;
+				ObjectOutputStream centrowrite;
+				try {
+					centroin = new FileInputStream("centro.dat");
+					centroread = new ObjectInputStream(centroin);
+					Centro_Estudio temp = (Centro_Estudio) centroread.readObject();
+					Centro_Estudio.setCentro(temp);
+					centroin.close();
+					centroread.close();
+					
+				} catch (FileNotFoundException e) {
+					try {
+						centroout = new FileOutputStream("centro.dat");
+						centrowrite = new ObjectOutputStream(centroout);
+						Estudiante admin = new Estudiante("Administrador", "Administrador", "admin", "admin");
+						Centro_Estudio.getInstance().regEstudiantes(admin);
+						centrowrite.writeObject(Centro_Estudio.getInstance());
+						centroout.close();
+						centrowrite.close();
+					} catch (FileNotFoundException e1) {
+						// TODO Auto-generated catch block
+						
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+					} 
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				try {
 					Login frame = new Login();
 					frame.setVisible(true);
@@ -86,10 +133,10 @@ public class Login extends JFrame {
 				char[] clave = jpfcontrasena.getPassword();
 				String confin = new String(clave);
 				
-				if(txtusuario.getText().equals("Admin") && confin.equals("admin")) {
-					dispose();
+				if(Centro_Estudio.getInstance().Login(txtusuario.getText(), confin)) {
 					JOptionPane.showMessageDialog(null, "Ha ingresado satisfactoriamente", "INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
 				    Main m = new Main();
+				    dispose();
 				    m.setVisible(true);
 				}else {
 					JOptionPane.showMessageDialog(null, "Contraseña o nombre de usuario incorrecto, por favor intente de nuevo", "Atencion",JOptionPane.WARNING_MESSAGE);
@@ -100,13 +147,13 @@ public class Login extends JFrame {
 		contentPane.add(btnIngresar);
 		
 	}
-	public int nivelUsuario()
+	public boolean nivelUsuario()
 	{
-		int nivel = 0;
+		boolean nivel = false;
 		if(txtusuario.getText().equals("Admin")) {
-		nivel = 1;
+		nivel = true;
 		}else {
-			nivel = 0;
+			nivel = false;
 		}
 		return nivel;
 	}

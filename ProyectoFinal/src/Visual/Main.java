@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logica.Centro_Estudio;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -14,6 +17,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class Main extends JFrame {
 	
@@ -23,23 +31,29 @@ public class Main extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Main frame = new Main();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
 	public Main() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				FileOutputStream centroout;
+				ObjectOutputStream centrowrite;
+				try {
+					centroout = new FileOutputStream("centro.dat");
+					centrowrite = new ObjectOutputStream(centroout);
+					centrowrite.writeObject(Centro_Estudio.getInstance());
+				} catch(FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
+		});
 		setTitle("Centro de estudio matematico");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,7 +89,10 @@ public class Main extends JFrame {
 		mnPrisma.add(mntmListar);
 		
 		JMenu mnAdministrador = new JMenu("Administrador");
-		mnAdministrador.setEnabled(false);
+		
+		if(!Centro_Estudio.getLoginestudiante().getUsuario().equalsIgnoreCase("Admin")){
+			mnAdministrador.setEnabled(false);
+		}
 		menuBar.add(mnAdministrador);
 		
 		
@@ -98,6 +115,16 @@ public class Main extends JFrame {
 			}
 		});
 		mnAdministrador.add(mntmReporte);
+		
+		JMenuItem mntmRegistrarEstudiante = new JMenuItem("Registrar estudiante");
+		mntmRegistrarEstudiante.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegEstudiante Reg = new RegEstudiante();
+				Reg.setModal(true);
+				Reg.setVisible(true);
+			}
+		});
+		mnAdministrador.add(mntmRegistrarEstudiante);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

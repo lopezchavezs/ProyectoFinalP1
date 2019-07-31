@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import Logica.Centro_Estudio;
 import Logica.Cuadrado;
+import Logica.Estudiante;
 import Logica.Prisma;
 import Logica.Rectangulo;
 import Logica.Rombo;
@@ -135,7 +136,7 @@ public class Listar extends JDialog {
 		fila = new Object[model.getColumnCount()];
 		switch (selection) {
 		case 0:
-			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
+			for (Prisma aux : (Centro_Estudio.getInstance().getMisPrismas())) {
 				fila[0] = aux.getNombre();
 				fila[2] = aux.areaLateral();
 				fila[3] = aux.areaTotal();

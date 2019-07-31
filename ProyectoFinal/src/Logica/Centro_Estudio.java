@@ -1,9 +1,11 @@
 package Logica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Centro_Estudio {
+public class Centro_Estudio implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Estudiante> misEstudiantes;
 	private static Centro_Estudio centro = null;
 	private static Estudiante loginestudiante;

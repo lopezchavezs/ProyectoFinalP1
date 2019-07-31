@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Logica.Centro_Estudio;
+import Logica.Estudiante;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -134,6 +135,7 @@ public class Main extends JFrame {
 		lblBscdrll.setFont(new Font("Tahoma", Font.PLAIN, 75));
 		lblBscdrll.setBounds(44, 485, 404, 203);
 		contentPane.add(lblBscdrll);
+		
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 75));

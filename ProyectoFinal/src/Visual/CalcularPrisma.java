@@ -11,10 +11,18 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
+import Logica.Centro_Estudiooo;
 import Logica.Cuadrado;
 import Logica.Prisma;
+import Logica.Rectangulo;
+import Logica.Rombo;
+import Logica.Trapecio;
+import Logica.Triangulo;
+import Logica.Vertice;
+
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.image.*;
 import java.awt.Color;
@@ -33,7 +41,7 @@ import java.awt.SystemColor;
 public class CalcularPrisma extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
+	private JTextField txtCodigo;
 	
 	
 	private JPanel Panel_Cuadrado = new JPanel();
@@ -71,26 +79,31 @@ public class CalcularPrisma extends JDialog {
 	private JSpinner spn_4_x = new JSpinner();
 	private JSpinner spn_4_y = new JSpinner();
 	
+	private Centro_Estudiooo est;
+	private Cuadrado cuad;
+	private Rectangulo rect;
+	private Rombo rom;
+	private Triangulo trian;
+	private Trapecio trap;
+	private Vertice vert;
+	private Vertice vert1;
+	private Vertice vert2;
+	private Vertice vert3;
+	private Vertice vert4;
+	
 	
 	
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		try {
-			CalcularPrisma dialog = new CalcularPrisma();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 	/**
 	 * Create the dialog.
 	 */
-	public CalcularPrisma() {
+	public CalcularPrisma(Centro_Estudiooo est) {
+		this.est = est;
 		setTitle("Registrar Prisma");
 		setBounds(100, 100, 620, 649);
 		getContentPane().setLayout(new BorderLayout());
@@ -103,10 +116,13 @@ public class CalcularPrisma extends JDialog {
 		lblCdigo.setBounds(26, 39, 46, 14);
 		contentPanel.add(lblCdigo);
 		
-		textField = new JTextField();
-		textField.setBounds(82, 36, 103, 20);
-		contentPanel.add(textField);
-		textField.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setBounds(82, 36, 103, 20);
+		contentPanel.add(txtCodigo);
+		txtCodigo.setColumns(10);
+			
+		txtCodigo.equals(String.valueOf(1000));
+		
 		java.awt.Image imgTriangulo = new ImageIcon(this.getClass().getResource("/triangulo.gif")).getImage();
 		java.awt.Image imgCuadrado = new ImageIcon(this.getClass().getResource("/cuadrado.gif")).getImage();
 		java.awt.Image imgRombo = new ImageIcon(this.getClass().getResource("/rombo.gif")).getImage();
@@ -668,11 +684,128 @@ public class CalcularPrisma extends JDialog {
 				JButton okButton = new JButton("Crear");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-					/*	if(rdbtnCuadrado.setSelected(true)) {
-							Cuadrado cuadrado = new Cuadrado(spn_Altura.getComponentCount(), spn_1_x.getComponentCount()+spn_1_y.getComponentCount(), spn_2_x.getComponentCount()+spn_2_y.getComponentCount(), textField.getText());
-						}*/
+										
+					if(rdbtnCuadrado.isSelected()){
+						cuad.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						
+						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						cuad.setVertice1(vert);
+						
+						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						cuad.setVertice2(vert);
+						
+						est.insertarPrisma(cuad);
+						
+					}
+					
+					if(rdbtnRectangulo.isSelected()){
+						
+						//rect.setAltura((float) 3.222);
+						//rect.setAltura();
+						
+						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						//rect.setVertice1(vert);
+
+						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						//rect.setVertice2(vert);
+						
+						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+					//	rect.setVertice3(vert);	
+						
+						rect = new Rectangulo(1002,  "Lol", Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
+						System.out.println(rect.getVertice1().getX());
+						
+						Centro_Estudiooo.getInstance().insertarPrisma(rect);
+					}
+					
+					if(rdbtnRombo.isSelected()){
+						rom.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						
+						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						rom.setVertice1(vert);
+
+						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						rom.setVertice2(vert);
+						
+						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						rom.setVertice3(vert);	
+						
+						vert = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
+						rom.setVertice4(vert);
+						
+						est.insertarPrisma(rom);
+						
+					}
+					
+					if(rdbtnTriangulo.isSelected()){
+						trian.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						
+						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						trian.setVertice1(vert);
+
+						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						trian.setVertice2(vert);
+						
+						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						trian.setAlt_base(vert);
+						
+						est.insertarPrisma(trian);
+						
+					}
+					
+					if(rdbtnTrapecio.isSelected()){
+						trap.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						
+						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						trap.setVertice1(vert);
+
+						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						trap.setVertice2(vert);
+						
+						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						trap.setVertice3(vert);
+						
+						vert = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
+						trap.setVertice4(vert);
+						
+						est.insertarPrisma(trap);
+						
+						//trap.setAlt_base(alt_base);
+							
+						}
+					
+					
+			
+						JOptionPane.showMessageDialog(null, "Operación satisfactoria", "Información", JOptionPane.INFORMATION_MESSAGE);
+						Clean();
+						
+						
+						VerPrisma prisma = new VerPrisma();
+						prisma.setModal(true);
+						prisma.setVisible(true);
+					
+					}
+
+					private void Clean() {
+						spn_1_x.setValue(0);
+						spn_1_y.setValue(0);
+					
+						spn_2_x.setValue(0);
+						spn_2_y.setValue(0);
+					
+						spn_3_x.setValue(0);
+						spn_3_y.setValue(0);
+						
+						spn_4_x.setValue(0);
+						spn_4_y.setValue(0);
+						
+						spn_Altura.setValue(0);
+						
+						
+						
 					}
 				});
+					
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
@@ -685,3 +818,4 @@ public class CalcularPrisma extends JDialog {
 		}
 	}
 }
+

@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 
-import Logica.Centro_Estudio;
+import Logica.Centro_Estudiooo;
 import Logica.Estudiante;
 
 import java.awt.event.ActionListener;
@@ -36,12 +36,16 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtusuario;
 	private JPasswordField jpfcontrasena;
+	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
+			
+
 			public void run() {
 				FileInputStream centroin;
 				FileOutputStream centroout;
@@ -50,8 +54,8 @@ public class Login extends JFrame {
 				try {
 					centroin = new FileInputStream("centro.dat");
 					centroread = new ObjectInputStream(centroin);
-					Centro_Estudio temp = (Centro_Estudio) centroread.readObject();
-					Centro_Estudio.setCentro(temp);
+					Centro_Estudiooo temp = (Centro_Estudiooo) centroread.readObject();
+					Centro_Estudiooo.setCentro(temp);
 					centroin.close();
 					centroread.close();
 					
@@ -60,8 +64,8 @@ public class Login extends JFrame {
 						centroout = new FileOutputStream("centro.dat");
 						centrowrite = new ObjectOutputStream(centroout);
 						Estudiante admin = new Estudiante("Administrador", "Administrador", "admin", "admin");
-						Centro_Estudio.getInstance().regEstudiantes(admin);
-						centrowrite.writeObject(Centro_Estudio.getInstance());
+						Centro_Estudiooo.getInstance().regEstudiantes(admin);
+						centrowrite.writeObject(Centro_Estudiooo.getInstance());
 						centroout.close();
 						centrowrite.close();
 					} catch (FileNotFoundException e1) {
@@ -133,7 +137,7 @@ public class Login extends JFrame {
 				char[] clave = jpfcontrasena.getPassword();
 				String confin = new String(clave);
 				
-				if(Centro_Estudio.getInstance().Login(txtusuario.getText(), confin)) {
+				if(Centro_Estudiooo.getInstance().Login(txtusuario.getText(), confin)) {
 					JOptionPane.showMessageDialog(null, "Ha ingresado satisfactoriamente", "INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
 				    Main m = new Main();
 				    dispose();

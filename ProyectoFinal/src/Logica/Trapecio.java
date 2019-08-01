@@ -5,8 +5,8 @@ public class Trapecio extends Prisma {
 	private Vertice vertice4;
 	private int alt_base;
 
-	public Trapecio(int altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, int alt_base, String nombre) {
-		super(altura, vertice1, vertice2, nombre);
+	public Trapecio(int codigo, float altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, int alt_base, String nombre) {
+		super(codigo, altura, nombre, vertice2, vertice1);
 		this.alt_base = alt_base;
 		this.vertice3 = vertice3;
 		this.vertice4 = vertice4;

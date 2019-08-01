@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Logica.Centro_Estudio;
+import Logica.Centro_Estudiooo;
 import Logica.Estudiante;
 
 import javax.swing.JMenuBar;
@@ -28,6 +28,7 @@ public class Main extends JFrame {
 	
 	private Dimension dim;
 	private JPanel contentPane;
+	private Centro_Estudiooo est;
 
 	/**
 	 * Launch the application.
@@ -37,6 +38,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		this.est = est;
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
@@ -45,7 +47,7 @@ public class Main extends JFrame {
 				try {
 					centroout = new FileOutputStream("centro.dat");
 					centrowrite = new ObjectOutputStream(centroout);
-					centrowrite.writeObject(Centro_Estudio.getInstance());
+					centrowrite.writeObject(Centro_Estudiooo.getInstance());
 				} catch(FileNotFoundException e) {
 					e.printStackTrace();
 				}
@@ -72,7 +74,7 @@ public class Main extends JFrame {
 		JMenuItem mntmCrear = new JMenuItem("Crear");
 		mntmCrear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CalcularPrisma prisma = new CalcularPrisma();
+				CalcularPrisma prisma = new CalcularPrisma(est);
 				prisma.setModal(true);
 				prisma.setVisible(true);
 			}
@@ -91,7 +93,7 @@ public class Main extends JFrame {
 		
 		JMenu mnAdministrador = new JMenu("Administrador");
 		
-		if(!Centro_Estudio.getLoginestudiante().getUsuario().equalsIgnoreCase("Admin")){
+		if(!Centro_Estudiooo.getLoginestudiante().getUsuario().equalsIgnoreCase("Admin")){
 			mnAdministrador.setEnabled(false);
 		}
 		menuBar.add(mnAdministrador);

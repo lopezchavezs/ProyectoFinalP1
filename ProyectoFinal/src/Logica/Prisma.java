@@ -2,25 +2,43 @@ package Logica;
 
 public abstract class Prisma {
 	
-	protected int altura;
+	protected int codigo;
+	protected float altura;
 	protected String nombre;
 	protected Vertice vertice1;
 	protected Vertice vertice2;
 	
-	public Prisma(int altura, Vertice vertice1, Vertice vertice2, String nombre) {
+	public Prisma(int codigo, float altura, String nombre, Vertice vertice1, Vertice vertice2) {
 		super();
+		this.codigo = codigo;
 		this.altura = altura;
+		this.nombre = nombre;
 		this.vertice1 = vertice1;
 		this.vertice2 = vertice2;
-		this.nombre = nombre;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public float getAltura() {
 		return altura;
 	}
 
-	public void setAltura(int altura) {
+	public void setAltura(float altura) {
 		this.altura = altura;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public Vertice getVertice1() {
@@ -39,18 +57,8 @@ public abstract class Prisma {
 		this.vertice2 = vertice2;
 	}
 
-	
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	abstract float area();
 	abstract float perimetro();
-
 	
 	public float volumen() {
 		return area() * altura;

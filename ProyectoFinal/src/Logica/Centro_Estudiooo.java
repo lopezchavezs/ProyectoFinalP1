@@ -2,28 +2,39 @@ package Logica;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import Logica.Prisma;
 
-public class Centro_Estudio implements Serializable{
+
+
+
+public class Centro_Estudiooo implements Serializable{
 	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	private ArrayList<Estudiante> misEstudiantes;
-	private static Centro_Estudio centro = null;
-	private static Estudiante loginestudiante;
 	private ArrayList<Prisma> misPrismas;
-
+	private static Centro_Estudiooo centro = null;
+	private static Estudiante loginestudiante;
 	
-	public Centro_Estudio() {
+	public Centro_Estudiooo() {
 		super();
-		
-		misEstudiantes = new ArrayList<>();
+		this.misEstudiantes = new ArrayList<>();
+		this.misPrismas = new ArrayList<>();
 	}
 	
-	public static Centro_Estudio getInstance() {
+	public static Centro_Estudiooo getInstance() {
 		if(centro == null ) {
-			centro = new Centro_Estudio();
+			centro = new Centro_Estudiooo();
 		}
 		return centro;
 	}
+
+	
+	
+
 
 	public ArrayList<Prisma> getMisPrismas() {
 		return misPrismas;
@@ -41,12 +52,12 @@ public class Centro_Estudio implements Serializable{
 		this.misEstudiantes = misEstudiantes;
 	}
 	
-	public static Centro_Estudio getCentro() {
+	public static Centro_Estudiooo getCentro() {
 		return centro;
 	}
 
-	public static void setCentro(Centro_Estudio centro) {
-		Centro_Estudio.centro = centro;
+	public static void setCentro(Centro_Estudiooo centro) {
+		Centro_Estudiooo.centro = centro;
 	}
 
 	public static Estudiante getLoginestudiante() {
@@ -54,9 +65,14 @@ public class Centro_Estudio implements Serializable{
 	}
 
 	public static void setLoginestudiante(Estudiante loginestudiante) {
-		Centro_Estudio.loginestudiante = loginestudiante;
+		Centro_Estudiooo.loginestudiante = loginestudiante;
 	}
-    public void regEstudiantes(Estudiante est) {
+   
+	
+	
+	
+	
+	public void regEstudiantes(Estudiante est) {
     	misEstudiantes.add(est);
     }
 	
@@ -70,6 +86,12 @@ public class Centro_Estudio implements Serializable{
 		}
     	return login;
     }
+    
+    public void insertarPrisma (Prisma aux) {
+    	System.out.println(aux.getNombre().toString() + " aqui");
+		//aux.setCodigo(1000+misPrismas.size());
+		misPrismas.add(aux);
+	}
 	
 
 }

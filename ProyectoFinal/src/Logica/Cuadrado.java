@@ -2,8 +2,8 @@ package Logica;
 
 public class Cuadrado extends Prisma {
 
-	public Cuadrado(int altura, Vertice vertice1, Vertice vertice2, String nombre) {
-		super(altura, vertice1, vertice2, nombre);
+	public Cuadrado(int codigo, float altura, Vertice vertice1, Vertice vertice2, String nombre) {
+		super(codigo, altura, nombre, vertice2, vertice1);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,5 +21,5 @@ public class Cuadrado extends Prisma {
 		return (float) (lado(vertice1, vertice2) * 4);
 	}
 
-	//sdsdsd
+	
 }

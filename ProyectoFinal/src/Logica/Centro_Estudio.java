@@ -63,7 +63,7 @@ public class Centro_Estudio implements Serializable{
     public boolean Login(String usuario, String confin) {
     	boolean login = false;
     	for (Estudiante estudiante : misEstudiantes) {
-			if(estudiante.getUsuario().equals(usuario)) {
+			if(estudiante.getUsuario().equals(usuario) && estudiante.getContrasenia().equals(confin)) {
 				loginestudiante = estudiante;
 				login = true;
 			}

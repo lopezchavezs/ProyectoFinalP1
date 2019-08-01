@@ -7,7 +7,7 @@ import Logica.Prisma;
 
 
 
-public class Centro_Estudiooo implements Serializable{
+public class Centro_Estudio implements Serializable{
 	
 	/**
 	 * 
@@ -16,18 +16,18 @@ public class Centro_Estudiooo implements Serializable{
 	//private static final long serialVersionUID = 1L;
 	private ArrayList<Estudiante> misEstudiantes;
 	private ArrayList<Prisma> misPrismas;
-	private static Centro_Estudiooo centro = null;
+	private static Centro_Estudio centro = null;
 	private static Estudiante loginestudiante;
 	
-	public Centro_Estudiooo() {
+	public Centro_Estudio() {
 		super();
 		this.misEstudiantes = new ArrayList<>();
 		this.misPrismas = new ArrayList<>();
 	}
 	
-	public static Centro_Estudiooo getInstance() {
+	public static Centro_Estudio getInstance() {
 		if(centro == null ) {
-			centro = new Centro_Estudiooo();
+			centro = new Centro_Estudio();
 		}
 		return centro;
 	}
@@ -52,12 +52,12 @@ public class Centro_Estudiooo implements Serializable{
 		this.misEstudiantes = misEstudiantes;
 	}
 	
-	public static Centro_Estudiooo getCentro() {
+	public static Centro_Estudio getCentro() {
 		return centro;
 	}
 
-	public static void setCentro(Centro_Estudiooo centro) {
-		Centro_Estudiooo.centro = centro;
+	public static void setCentro(Centro_Estudio centro) {
+		Centro_Estudio.centro = centro;
 	}
 
 	public static Estudiante getLoginestudiante() {
@@ -65,7 +65,7 @@ public class Centro_Estudiooo implements Serializable{
 	}
 
 	public static void setLoginestudiante(Estudiante loginestudiante) {
-		Centro_Estudiooo.loginestudiante = loginestudiante;
+		Centro_Estudio.loginestudiante = loginestudiante;
 	}
    
 	

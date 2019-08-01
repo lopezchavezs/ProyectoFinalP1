@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-import Logica.Centro_Estudiooo;
+import Logica.Centro_Estudio;
 import Logica.Cuadrado;
 import Logica.Prisma;
 import Logica.Rectangulo;
@@ -124,7 +124,7 @@ public class PrismasCreados extends JDialog {
 		fila = new Object[model.getColumnCount()];
 		switch (selection) {
 		case 0:
-			for (Prisma aux : (Centro_Estudiooo.getInstance().getMisPrismas())) {
+			for (Prisma aux : (Centro_Estudio.getInstance().getMisPrismas())) {
 				fila[0] = aux.getNombre();
 				fila[2] = aux.areaLateral();
 				fila[3] = aux.areaTotal();
@@ -149,7 +149,7 @@ public class PrismasCreados extends JDialog {
 			break;
 
 		case 1:
-			for (Prisma aux : Centro_Estudiooo.getInstance().getMisPrismas()) {
+			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
 				if(aux instanceof Cuadrado) {
 					fila[0] = aux.getNombre();
 					fila[1] = "Cuadrado";
@@ -162,7 +162,7 @@ public class PrismasCreados extends JDialog {
 			break;
 		
 		case 2:
-			for (Prisma aux : Centro_Estudiooo.getInstance().getMisPrismas()) {
+			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
 				if(aux instanceof Rectangulo) {
 					fila[0] = aux.getNombre();
 					fila[1] = "Rectangulo";
@@ -175,7 +175,7 @@ public class PrismasCreados extends JDialog {
 			break;
 			
 		case 3:
-			for (Prisma aux : Centro_Estudiooo.getInstance().getMisPrismas()) {
+			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
 				if(aux instanceof Triangulo) {
 					fila[0] = aux.getNombre();
 					fila[1] = "Triangulo";
@@ -188,7 +188,7 @@ public class PrismasCreados extends JDialog {
 			break;
 			
 		case 4:
-			for (Prisma aux : Centro_Estudiooo.getInstance().getMisPrismas()) {
+			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
 				if(aux instanceof Rombo) {
 					fila[0] = aux.getNombre();
 					fila[1] = "Rombo";
@@ -201,7 +201,7 @@ public class PrismasCreados extends JDialog {
 			break;
 			
 		case 5:
-			for (Prisma aux : Centro_Estudiooo.getInstance().getMisPrismas()) {
+			for (Prisma aux : Centro_Estudio.getInstance().getMisPrismas()) {
 				if(aux instanceof Trapecio) {
 					fila[0] = aux.getNombre();
 					fila[1] = "Trapecio";

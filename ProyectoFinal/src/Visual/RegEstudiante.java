@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import Logica.Centro_Estudiooo;
+import Logica.Centro_Estudio;
 import Logica.Estudiante;
 
 import javax.swing.JLabel;
@@ -109,7 +109,7 @@ public class RegEstudiante extends JDialog {
 						if(txtcontraseña.getText().equals(txtconfirm.getText()) ) {
 							JOptionPane.showMessageDialog(null, "Estudiante registrado con exito", "Registrado", JOptionPane.INFORMATION_MESSAGE);
 							estudiante = new Estudiante(txtnombre.getText(), txtapellido.getText(), txtusuario.getText(), txtcontraseña.getText());
-							Centro_Estudiooo.getInstance().regEstudiantes(estudiante);
+							Centro_Estudio.getInstance().regEstudiantes(estudiante);
 						}else {
 							JOptionPane.showMessageDialog(null, "Contraseña no coincide", "Atencion", JOptionPane.WARNING_MESSAGE);
 						}

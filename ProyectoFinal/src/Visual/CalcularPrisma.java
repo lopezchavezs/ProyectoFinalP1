@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-import Logica.Centro_Estudiooo;
+import Logica.Centro_Estudio;
 import Logica.Cuadrado;
 import Logica.Prisma;
 import Logica.Rectangulo;
@@ -79,7 +79,7 @@ public class CalcularPrisma extends JDialog {
 	private JSpinner spn_4_x = new JSpinner();
 	private JSpinner spn_4_y = new JSpinner();
 	
-	private Centro_Estudiooo est;
+	private Centro_Estudio est;
 	private Cuadrado cuad;
 	private Rectangulo rect;
 	private Rombo rom;
@@ -102,7 +102,7 @@ public class CalcularPrisma extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public CalcularPrisma(Centro_Estudiooo est) {
+	public CalcularPrisma(Centro_Estudio est) {
 		this.est = est;
 		setTitle("Registrar Prisma");
 		setBounds(100, 100, 620, 649);
@@ -715,7 +715,7 @@ public class CalcularPrisma extends JDialog {
 						rect = new Rectangulo(1002,  "Lol", Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
 						System.out.println(rect.getVertice1().getX());
 						
-						Centro_Estudiooo.getInstance().insertarPrisma(rect);
+						Centro_Estudio.getInstance().insertarPrisma(rect);
 					}
 					
 					if(rdbtnRombo.isSelected()){

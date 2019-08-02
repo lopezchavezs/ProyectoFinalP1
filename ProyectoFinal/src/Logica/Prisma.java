@@ -1,29 +1,31 @@
 package Logica;
 
-public abstract class Prisma {
+import java.io.Serializable;
+public abstract class Prisma implements Serializable{
 	
-	protected int codigo;
+	protected static final long serialVersionUID = 1L;
+	//protected int codigo;
 	protected float altura;
 	protected String nombre;
 	protected Vertice vertice1;
 	protected Vertice vertice2;
 	
-	public Prisma(int codigo, float altura, String nombre, Vertice vertice1, Vertice vertice2) {
+	public Prisma( float altura, String nombre, Vertice vertice1, Vertice vertice2) {
 		super();
-		this.codigo = codigo;
+		//this.codigo = codigo;
 		this.altura = altura;
 		this.nombre = nombre;
 		this.vertice1 = vertice1;
 		this.vertice2 = vertice2;
 	}
 
-	public int getCodigo() {
+	/*public int getCodigo() {
 		return codigo;
 	}
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
+	}*/
 
 	public float getAltura() {
 		return altura;

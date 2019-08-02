@@ -16,15 +16,15 @@ import javax.swing.JTextField;
 public class VerPrisma extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
+	private JTextField txtvol;
+	private JTextField txtarealat;
+	private JTextField txtareatot;
+	private JTextField txtcode;
+	private JTextField txtnombre;
+	private JTextField txtdate;
+	private JTextField txtalt;
+	private JTextField txtcolor;
+	private JTextField txtvertice;
 
 	/**
 	 * Launch the application.
@@ -69,34 +69,34 @@ public class VerPrisma extends JDialog {
 			contentPanel.add(lblVolumen);
 		}
 		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setEnabled(false);
-		textField.setBounds(67, 168, 125, 20);
-		contentPanel.add(textField);
-		textField.setColumns(10);
+		txtvol = new JTextField();
+		txtvol.setEditable(false);
+		txtvol.setEnabled(false);
+		txtvol.setBounds(67, 168, 125, 20);
+		contentPanel.add(txtvol);
+		txtvol.setColumns(10);
 		
 		JLabel lblAreaLateral = new JLabel("Area Lateral:");
 		lblAreaLateral.setBounds(219, 171, 79, 14);
 		contentPanel.add(lblAreaLateral);
 		
-		textField_1 = new JTextField();
-		textField_1.setEnabled(false);
-		textField_1.setEditable(false);
-		textField_1.setBounds(295, 168, 125, 20);
-		contentPanel.add(textField_1);
-		textField_1.setColumns(10);
+		txtarealat = new JTextField();
+		txtarealat.setEnabled(false);
+		txtarealat.setEditable(false);
+		txtarealat.setBounds(295, 168, 125, 20);
+		contentPanel.add(txtarealat);
+		txtarealat.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Area Total:");
 		lblNewLabel.setBounds(459, 171, 61, 14);
 		contentPanel.add(lblNewLabel);
 		
-		textField_2 = new JTextField();
-		textField_2.setEnabled(false);
-		textField_2.setEditable(false);
-		textField_2.setBounds(525, 168, 125, 20);
-		contentPanel.add(textField_2);
-		textField_2.setColumns(10);
+		txtareatot = new JTextField();
+		txtareatot.setEnabled(false);
+		txtareatot.setEditable(false);
+		txtareatot.setBounds(525, 168, 125, 20);
+		contentPanel.add(txtareatot);
+		txtareatot.setColumns(10);
 		
 		JLabel lblBase = new JLabel("Altura:");
 		lblBase.setBounds(435, 60, 46, 14);
@@ -122,47 +122,47 @@ public class VerPrisma extends JDialog {
 		lblFecha.setBounds(157, 110, 47, 14);
 		contentPanel.add(lblFecha);
 		
-		textField_3 = new JTextField();
-		textField_3.setEnabled(false);
-		textField_3.setEditable(false);
-		textField_3.setBounds(242, 57, 136, 20);
-		contentPanel.add(textField_3);
-		textField_3.setColumns(10);
+		txtcode = new JTextField();
+		txtcode.setEnabled(false);
+		txtcode.setEditable(false);
+		txtcode.setBounds(242, 57, 136, 20);
+		contentPanel.add(txtcode);
+		txtcode.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setEditable(false);
-		textField_4.setEnabled(false);
-		textField_4.setBounds(242, 82, 136, 20);
-		contentPanel.add(textField_4);
-		textField_4.setColumns(10);
+		txtnombre = new JTextField();
+		txtnombre.setEditable(false);
+		txtnombre.setEnabled(false);
+		txtnombre.setBounds(242, 82, 136, 20);
+		contentPanel.add(txtnombre);
+		txtnombre.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setEnabled(false);
-		textField_5.setEditable(false);
-		textField_5.setBounds(242, 107, 136, 20);
-		contentPanel.add(textField_5);
-		textField_5.setColumns(10);
+		txtdate = new JTextField();
+		txtdate.setEnabled(false);
+		txtdate.setEditable(false);
+		txtdate.setBounds(242, 107, 136, 20);
+		contentPanel.add(txtdate);
+		txtdate.setColumns(10);
 		
-		textField_6 = new JTextField();
-		textField_6.setEnabled(false);
-		textField_6.setEditable(false);
-		textField_6.setBounds(502, 57, 148, 20);
-		contentPanel.add(textField_6);
-		textField_6.setColumns(10);
+		txtalt = new JTextField();
+		txtalt.setEnabled(false);
+		txtalt.setEditable(false);
+		txtalt.setBounds(502, 57, 148, 20);
+		contentPanel.add(txtalt);
+		txtalt.setColumns(10);
 		
-		textField_7 = new JTextField();
-		textField_7.setEnabled(false);
-		textField_7.setEditable(false);
-		textField_7.setBounds(502, 107, 148, 20);
-		contentPanel.add(textField_7);
-		textField_7.setColumns(10);
+		txtcolor = new JTextField();
+		txtcolor.setEnabled(false);
+		txtcolor.setEditable(false);
+		txtcolor.setBounds(502, 107, 148, 20);
+		contentPanel.add(txtcolor);
+		txtcolor.setColumns(10);
 		
-		textField_8 = new JTextField();
-		textField_8.setEnabled(false);
-		textField_8.setEditable(false);
-		textField_8.setBounds(502, 82, 148, 20);
-		contentPanel.add(textField_8);
-		textField_8.setColumns(10);
+		txtvertice = new JTextField();
+		txtvertice.setEnabled(false);
+		txtvertice.setEditable(false);
+		txtvertice.setBounds(502, 82, 148, 20);
+		contentPanel.add(txtvertice);
+		txtvertice.setColumns(10);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

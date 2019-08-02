@@ -3,10 +3,10 @@ package Logica;
 public class Trapecio extends Prisma {
 	private Vertice vertice3;
 	private Vertice vertice4;
-	private int alt_base;
+	private Float alt_base;
 
-	public Trapecio(int codigo, float altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, int alt_base, String nombre) {
-		super(codigo, altura, nombre, vertice2, vertice1);
+	public Trapecio( Float altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, Float alt_base, String nombre) {
+		super( altura, nombre, vertice2, vertice1);
 		this.alt_base = alt_base;
 		this.vertice3 = vertice3;
 		this.vertice4 = vertice4;
@@ -28,11 +28,11 @@ public class Trapecio extends Prisma {
 		this.vertice4 = vertice4;
 	}
 
-	public int getAlt_base() {
+	public Float getAlt_base() {
 		return alt_base;
 	}
 
-	public void setAlt_base(int alt_base) {
+	public void setAlt_base(Float alt_base) {
 		this.alt_base = alt_base;
 	}
 	

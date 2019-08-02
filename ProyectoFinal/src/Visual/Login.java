@@ -151,14 +151,5 @@ public class Login extends JFrame {
 		contentPane.add(btnIngresar);
 		
 	}
-	public boolean nivelUsuario()
-	{
-		boolean nivel = false;
-		if(txtusuario.getText().equals("Admin")) {
-		nivel = true;
-		}else {
-			nivel = false;
-		}
-		return nivel;
-	}
+	
 }

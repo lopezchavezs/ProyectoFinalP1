@@ -4,8 +4,8 @@ public class Rectangulo extends Prisma {
 	
 	private Vertice vertice3;
 	
-	public Rectangulo(int codigo, String nombre, float altura, Vertice vertice1, Vertice  vertice2, Vertice vertice3) {
-		super(codigo, altura, nombre, vertice2, vertice1);
+	public Rectangulo( String nombre, float altura, Vertice vertice1, Vertice  vertice2, Vertice vertice3) {
+		super( altura, nombre, vertice2, vertice1);
 		this.vertice3 = vertice3;
 	}
 

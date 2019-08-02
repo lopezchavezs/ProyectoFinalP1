@@ -5,8 +5,8 @@ public class Rombo extends Prisma {
 	private Vertice vertice3;
 	private Vertice vertice4;
 
-	public Rombo(int codigo, float altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, String nombre) {
-		super(codigo, altura, nombre, vertice2, vertice1);
+	public Rombo( float altura, Vertice vertice1, Vertice vertice2, Vertice vertice3, Vertice vertice4, String nombre) {
+		super(altura, nombre, vertice2, vertice1);
 		this.vertice3 = vertice3;
 		this.vertice4 = vertice4;
 	}

@@ -23,6 +23,7 @@ import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.awt.Color;
 
 public class Main extends JFrame {
 	
@@ -69,6 +70,9 @@ public class Main extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnPrisma = new JMenu("Prisma");
+		if(Centro_Estudio.getLoginestudiante().getUsuario().equalsIgnoreCase("Admin")){
+			mnPrisma.setEnabled(false);
+		}
 		menuBar.add(mnPrisma);
 		
 		JMenuItem mntmCrear = new JMenuItem("Crear");
@@ -139,9 +143,10 @@ public class Main extends JFrame {
 		contentPane.add(lblBscdrll);
 		
 		
-		JLabel lblUsuario = new JLabel("Usuario:");
+		JLabel lblUsuario = new JLabel("Usuario: "+Centro_Estudio.usuarioestudiante);
+		lblUsuario.setBackground(new Color(245, 255, 250));
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		lblUsuario.setBounds(44, 652, 359, 153);
+		lblUsuario.setBounds(44, 652, 667, 153);
 		contentPane.add(lblUsuario);
 	}
 }

@@ -42,7 +42,7 @@ public class CalcularPrisma extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtCodigo;
-	
+	private static final long serialVersionUID = 1L;
 	
 	private JPanel Panel_Cuadrado = new JPanel();
 	private JPanel Panel_Rombo = new JPanel();
@@ -686,16 +686,17 @@ public class CalcularPrisma extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 										
 					if(rdbtnCuadrado.isSelected()){
+						/*cuad.setNombre(txtCodigo.getText());
 						cuad.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
 						
-						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
 						cuad.setVertice1(vert);
 						
-						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
-						cuad.setVertice2(vert);
-						
-						est.insertarPrisma(cuad);
-						
+						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						cuad.setVertice2(vert);*/
+						Cuadrado cuad = new Cuadrado(Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, txtCodigo.getText());
+						//est.insertarPrisma( cuad.getAltura(), cuad.getVertice1(), cuad.getVertice2(), cuad.getNombre(), Centro_Estudio.usuarioestudiante);
+						Centro_Estudio.getInstance().insertarPrisma(cuad, Centro_Estudio.getUsuarioestudiante());
 					}
 					
 					if(rdbtnRectangulo.isSelected()){
@@ -712,7 +713,7 @@ public class CalcularPrisma extends JDialog {
 						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
 					//	rect.setVertice3(vert);	
 						
-						rect = new Rectangulo(1002,  "Lol", Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
+						rect = new Rectangulo("Lol", Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
 						System.out.println(rect.getVertice1().getX());
 						
 						Centro_Estudio.getInstance().insertarPrisma(rect);

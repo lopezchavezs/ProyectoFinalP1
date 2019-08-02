@@ -686,14 +686,14 @@ public class CalcularPrisma extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 										
 					if(rdbtnCuadrado.isSelected()){
-						/*cuad.setNombre(txtCodigo.getText());
-						cuad.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						//cuad.setNombre(txtCodigo.getText());
+						//cuad.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
 						
 						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
-						cuad.setVertice1(vert);
+						//cuad.setVertice1(vert);
 						
 						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
-						cuad.setVertice2(vert);*/
+						//cuad.setVertice2(vert);
 						Cuadrado cuad = new Cuadrado(Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, txtCodigo.getText());
 						//est.insertarPrisma( cuad.getAltura(), cuad.getVertice1(), cuad.getVertice2(), cuad.getNombre(), Centro_Estudio.usuarioestudiante);
 						Centro_Estudio.getInstance().insertarPrisma(cuad, Centro_Estudio.getUsuarioestudiante());
@@ -713,63 +713,69 @@ public class CalcularPrisma extends JDialog {
 						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
 					//	rect.setVertice3(vert);	
 						
-						rect = new Rectangulo("Lol", Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
-						System.out.println(rect.getVertice1().getX());
+						rect = new Rectangulo( txtCodigo.getText(), Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3);
+						///System.out.println(rect.getVertice1().getX());
 						
-						Centro_Estudio.getInstance().insertarPrisma(rect);
+						Centro_Estudio.getInstance().insertarPrisma(rect, Centro_Estudio.getUsuarioestudiante());
 					}
 					
 					if(rdbtnRombo.isSelected()){
-						rom.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						//rom.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
 						
-						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
-						rom.setVertice1(vert);
+						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						//rom.setVertice1(vert);
 
-						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
-						rom.setVertice2(vert);
+						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						//rom.setVertice2(vert);
 						
-						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
-						rom.setVertice3(vert);	
+						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						//rom.setVertice3(vert);	
 						
-						vert = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
-						rom.setVertice4(vert);
+						vert4 = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
+						//rom.setVertice4(vert);
 						
-						est.insertarPrisma(rom);
+						rom = new Rombo(Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3, vert4, txtCodigo.getText());
+						
+						Centro_Estudio.getInstance().insertarPrisma(rom, Centro_Estudio.getUsuarioestudiante());
 						
 					}
 					
 					if(rdbtnTriangulo.isSelected()){
-						trian.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						//trian.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
 						
-						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
-						trian.setVertice1(vert);
+						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						//trian.setVertice1(vert);
 
-						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
-						trian.setVertice2(vert);
+						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						//trian.setVertice2(vert);
 						
-						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
-						trian.setAlt_base(vert);
+						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						//trian.setAlt_base(vert);
 						
-						est.insertarPrisma(trian);
+						trian = new Triangulo(Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3, txtCodigo.getText());
+						
+						Centro_Estudio.getInstance().insertarPrisma(trian, Centro_Estudio.getUsuarioestudiante());
 						
 					}
 					
 					if(rdbtnTrapecio.isSelected()){
-						trap.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
+						//trap.setAltura(Float.valueOf(spn_Altura.getValue().toString()));
 						
-						vert = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
-						trap.setVertice1(vert);
+						vert1 = new Vertice (Float.valueOf(spn_1_x.getValue().toString()), Float.valueOf(spn_1_y.getValue().toString()));
+						//trap.setVertice1(vert);
 
-						vert = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
-						trap.setVertice2(vert);
+						vert2 = new Vertice (Float.valueOf(spn_2_x.getValue().toString()), Float.valueOf(spn_2_y.getValue().toString()));
+						//trap.setVertice2(vert);
 						
-						vert = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
-						trap.setVertice3(vert);
+						vert3 = new Vertice (Float.valueOf(spn_3_x.getValue().toString()), Float.valueOf(spn_3_y.getValue().toString()));
+						//trap.setVertice3(vert);
 						
-						vert = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
-						trap.setVertice4(vert);
+						vert4 = new Vertice (Float.valueOf(spn_4_x.getValue().toString()), Float.valueOf(spn_4_y.getValue().toString()));
+						//trap.setVertice4(vert);
 						
-						est.insertarPrisma(trap);
+						trap = new Trapecio(Float.valueOf(spn_Altura.getValue().toString()), vert1, vert2, vert3, vert4, Float.valueOf(spn_Altura.getValue().toString()), txtCodigo.getText());
+						
+						Centro_Estudio.getInstance().insertarPrisma(trap, Centro_Estudio.getUsuarioestudiante());
 						
 						//trap.setAlt_base(alt_base);
 							
